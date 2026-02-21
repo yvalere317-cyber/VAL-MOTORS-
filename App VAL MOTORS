@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>VAL Motors | Catalogue Pro</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #0a0a0a; color: #fff; padding: 20px; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: #1a1a1a; padding: 15px; border-radius: 12px; border: 2px solid #333; cursor: pointer; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); padding: 20px; overflow-y: auto; }
+        .btn-action { background: #ff9900; color: #000; padding: 15px; border-radius: 5px; border: none; cursor: pointer; width: 100%; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h1>VAL MOTORS - GAMME 2026</h1>
+
+<div class="gallery">
+    <div class="card" onclick="openDetails('BDX 1', 'Électrique 40kW', 'Acier haute résistance', '12,000,000 CFA')"><h3>BDX 1</h3></div>
+    <div class="card" onclick="openDetails('BDX 2 PRO', 'Hybride 1.5L', 'Châssis acier renforcé', '22,000,000 CFA')"><h3>BDX 2 PRO</h3></div>
+    <div class="card" onclick="openDetails('BDX Éclipse', 'Électrique Haute Performance', 'Carbone & Alliage', '38,000,000 CFA')"><h3>BDX Éclipse</h3></div>
+    <div class="card" onclick="openDetails('BDX Dragon', 'Turbo Diesel 3.2L', 'Acier massif anti-corrosion', '28,000,000 CFA')"><h3>BDX Dragon</h3></div>
+    <div class="card" onclick="openDetails('BDX Explorer', 'Hybride (Diesel 2.0L + Électrique 30kW)', 'Acier haute résistance + Suspensions auto', '32,000,000 CFA')"><h3>BDX Explorer (Nouveau)</h3></div>
+    <div class="card" onclick="openDetails('VAL Camion', 'Diesel 6 Cylindres', 'Châssis échelle acier trempé', '55,000,000 CFA')"><h3>VAL Camion</h3></div>
+</div>
+
+<div id="detailsModal" class="modal">
+    <button onclick="document.getElementById('detailsModal').style.display='none'">Fermer</button>
+    <h2 id="modalTitle"></h2>
+    <p><strong>Moteur:</strong> <span id="modalEngine"></span></p>
+    <p><strong>Matériaux:</strong> <span id="modalMat"></span></p>
+    <p><strong>Prix:</strong> <span id="modalPrice" style="color: #ff9900;"></span></p>
+    <hr>
+    <h3>Création de compte</h3>
+    <input type="text" placeholder="Nom complet" style="width:100%; margin-bottom:10px;"><br>
+    <button class="btn-action" onclick="alert('Réservation confirmée pour VAL Motors.')">Confirmer la Réservation</button>
+</div>
+
+<script>
+    function openDetails(title, engine, mat, price) {
+        document.getElementById('modalTitle').innerText = title;
+        document.getElementById('modalEngine').innerText = engine;
+        document.getElementById('modalMat').innerText = mat;
+        document.getElementById('modalPrice').innerText = price;
+        document.getElementById('detailsModal').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
